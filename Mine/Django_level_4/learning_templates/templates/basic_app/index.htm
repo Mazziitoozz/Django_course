@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.htm"%}
+{% load my_extras %} <!--You have to create a folder called templatetags inside you apps and 2 files: 
+                        one of them called __init__.py another one with the name that you are gona load-->
+    {%block body_block%}
+        <h1>Welcome to index</h1>
+        
+        <h1>{{text |cut1:"Hello"}}</h1> <!--When you want to insert from function with render and you use | means a filter, I created a filter called cut1 in libary my_extras -->
+        <h2>{{number | add:"95"}}</h2>
+         
+        {%endblock%}
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %} <!--necessary to insert picture from static, looks end of setings-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mazoo</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}"/> <!-- necessary to add css, you have to create in folder static -->
+</head>
+<body>
+    <h1>Hello this is index.html i'm gonn insert a picture</h1>
+        {{insert_me}} <!-- Insert the variable that previously you have created-->
+    <div>
+        <img src="{% static "images/picture1.png" %}" alt="Uh Oh,didn't show!">
+    </div>
+    <div class="djangtwo">
+        {% if access_records %}
+        <table>
+            <thead>
+                <th>Site Name</th>
+                <th>Date Access</th>
+            </thead>
+        
+            {% for acc in access_records %}
+            <tr>
+                <td>{{acc.name}}</td>
+                <td>{{acc.date}}</td>
+            </tr>
+            {%endfor %}
+        </table>
+        {%else %}
+            <p>No access records found</p>
+        {%endif %}
+
+    </div>
+</body>
+</html>

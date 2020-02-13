@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<!--by default
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+-->
+<h1 id="site-name"><a href="{% url 'admin:indexa' %}">Video Store Admin MAZO</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+<!-- https://github.com/django/django/blob/master/django/contrib/admin/templates/admin/  you have to create the same structure
+ templates/admin and if you want to edit base page you have to change base_site.html if you want to change register
+you have to chose registration folder-->
